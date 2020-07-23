@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block title %}
+	Patients list
+{% endblock %}
+
+{% block content %}
+<h1 class="pb-3 mt-4 mb-2 border-bottom">Patients Data</h1>
+<!-- <div class="container-sm pb-5 pt-4">
+	<h3><p class="badge badge-dark">Males</p> <span class="ml-2">{{ males }}</span></h3>
+	<div class="progress w-50">
+		<div class="progress-bar" role="progressbar" style="width: {{ males_percentage }}%;" arial-valuenow="{{ males_percentage }}" arial-valuemin="0" arial-valuemax="100">{{ males_percentage }}%</div>
+	</div>
+	<br>
+	<h3><p class="badge badge-dark">Females</p> <span class="ml-2">{{ females }}</span></h3>
+	<div class="progress w-50">
+		<div class="progress-bar" role="progressbar" style="width: {{ females_percentage }}%;" arial-valuenow="{{ females_percentage }}" arial-valuemin="0" arial-valuemax="100">{{ females_percentage }}%</div>
+	</div>
+</div> -->
+
+<form action="." method="GET" class="form-inline mt-3">
+	<div class="input-group ml-3 w-50">
+		{{ search_form.Search }}
+		<div class="input-group-append">
+			<button class="btn btn-warning" type="submit">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+		</div>
+	</div>
+	<a href="{% url 'patients:patient_new' %}" class="btn btn-primary ml-3">Add Patient</a>
+</form>
+
+<div class="container shadow p-3 mb-5 bg-white rounded" style="overflow-x: auto;">
+	<table class="table table-striped">
+		<tr class="bg-dark">
+			{% for header in headers %}
+				<th scope="col" class="text-white">{{ header }}</th>
+			{% endfor %}
+		</tr>
+		{% if search_results %}
+			{% include "patients/show_data.html" with patients=search_results %}
+		{% else %}
+			{% include "patients/show_data.html" with patients=patients %}
+		{% endif %}
+	</table>
+</div>
+<script>
+	document.getElementsByTagName('label')[0].style.display = 'none';
+</script>
+{% endblock %}

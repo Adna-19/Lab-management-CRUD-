@@ -1,0 +1,17 @@
+{% for patient in patients %}
+    <tr scope="row">
+        <td><a class="link" href="{{ patient.get_absolute_url }}">{{ patient.first_name }}</a></td>
+        <td>{{ patient.last_name }}</td>
+        <td>{{ patient.cnic }}</td>
+        <!-- <td>{{ patient.image }}</td> -->
+        <td>{{ patient.address }}</td>
+        <td>{{ patient.contact }}</td>
+        <td>{{ patient.email }}</td>
+        <td>{{ patient.marital_status }}</td>
+        <td>{{ patient.gender }}</td>
+        <td>{{ patient.date_of_birth }}</td>
+        <td>{{ patient.surgery_date }}</td>
+        <td>{{ patient.recovery_date }}</td>
+        <td>{{ patient.surgery }}</td>
+    </tr>
+{% endfor %}

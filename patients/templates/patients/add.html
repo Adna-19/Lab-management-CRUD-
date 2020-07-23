@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block title %}
+    Edit Patient
+{% endblock %}
+
+{% block content %}
+    <style>
+        div.form-row{
+            line-height: 2.8em;
+        }
+    </style>
+    <h1 class="pb-3 mt-4 mb-2 border-bottom">Add New Patient</h1>
+    {% include "patients/reg-form.html" with form=form %}
+
+    <script>
+        var select_fields = document.getElementsByTagName('select');
+        for(i = 0; i < select_fields.length; i++){
+            select_fields[i].className = 'dropdown-toggle bootstrap-select btn btn-default form-control pl-2 border';
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,73 @@
+<form class="p-3" action="." method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;First name {{ form.first_name }}
+        </div>
+        <div class="col">
+            &nbsp;Last name {{ form.last_name }}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;Image {{ form.image }}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;SSN {{ form.cnic }}
+        </div>
+        <div class="col">
+            &nbsp;Contact {{ form.contact }}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;Email {{ form.email }}
+        </div>
+        <div class="col">
+            &nbsp;Address {{ form.address }}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;Gender{{ form.gender }}
+        </div>
+        <div class="col">
+            &nbsp;Marital Status {{ form.marital_status }}
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;Date of Birth {{ form.date_of_birth }}
+            <small class="text-muted">must be in the format <b>yy-dd-mm</b></small>
+        </div>
+        <div class="col">
+            &nbsp; Surgery {{ form.surgery }}
+        </div>
+    </div>
+    
+    <div class="row form-row">
+        <div class="col">
+            &nbsp;Surgery Date {{ form.surgery_date }}
+            <small class="text-muted">must be in the format <b>yy-dd-mm</b></small>
+        </div>
+        <div class="col">
+            &nbsp;Recovery Date {{ form.recovery_date }}
+            <small class="text-muted">must be in the format <b>yy-dd-mm</b></small>
+        </div>
+    </div>
+
+    <div class="row form-row">
+        <div class="col">
+            &nbsp; Surgery details {{form.surgery_details }}
+        </div>
+    </div>
+    <br>
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>

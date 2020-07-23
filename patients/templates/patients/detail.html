@@ -1,0 +1,74 @@
+{% extends "../base.html" %}
+
+{% block title %}
+	{{ patient.slug }}
+{% endblock %}
+
+{% block content %}
+	<h1 class="pb-3 mt-4 mb-2 border-bottom"><strong>MORE ABOUT<span class="ml-3 text-success">({{ patient.first_name }})</span></strong></h1>
+
+	<div class="container">
+		<div class="float-left w-25 p-4">
+			<img src="{{ patient.image.url }}" class="img-thumbnail mx-auto d-block" width="200px" height="400px">
+    		<p class="badge-secondary w-75 mt-2 mx-auto text-center">{{ patient.first_name }} {{ patient.last_name }}</p>
+		</div>
+
+		<div class="float-right w-75">
+			<table class="table w-50 mt-4">
+				<tr>
+					<td>Gender &emsp14;&emsp14;<i class="fa fa-male" aria-hidden="true"></i></td>
+					<td><i><strong>{{ patient.gender }}</strong></i></td>
+				</tr>
+				<tr>
+					<td>CNIC &emsp14;&emsp14;<i class="fa fa-id-card-o" aria-hidden="true"></i></td>
+					<td><i><strong>{{ patient.cnic }}</strong></i></td>
+				</tr>
+				<tr>
+					<td>DOB &emsp14;&emsp14;&emsp14;<i class="fa fa-birthday-cake" aria-hidden="true"></i></td>
+					<td><i><strong>{{ patient.date_of_birth }}</strong></i></td>
+				</tr>
+				<tr>
+					<td>Email &emsp14;&emsp14;<i class="fa fa-envelope" aria-hidden="true"></i></td>
+					<td><i><strong>{{ patient.email }}</strong></i></td>
+				</tr>
+				<tr>
+					<td>Surgery &emsp14;&emsp14;<i class="fa fa-plus" aria-hidden="true"></i></td>
+					<td><i><strong>{{ patient.surgery }}</strong></i></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="{% url 'patients:patient_edit' patient.slug %}" class="btn-sm btn-info">Edit data</a>
+					</td>
+					<td>
+						<a href="{% url 'patients:delete_patient' patient.slug %}" class="btn-sm btn-danger">Delete Data</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- to clear float -->
+		<div class="clearfix"></div>
+	</div>
+
+	<ul class="list-group" style="margin-left: 7%; width: 57%;">
+		<li class="list-group-item">
+			<i class="fa fa-facebook fa-1x" aria-hidden="true"></i>
+			<a href="#" class="link ml-4">https://www.facebook.com/{{patient.slug}}/timeline/12-909edfdsd-3</a>
+		</li>
+		<li class="list-group-item">
+			<i class="fa fa-instagram fa-1x" aria-hidden="true"></i>
+			<a href="#" class="link ml-4">https://www.instagram.com/{{patient.slug}}/timeline/12-909edfdsd-3</a>
+		</li>
+		<li class="list-group-item">
+			<i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+			<a href="#" class="link ml-4">https://www.twitter.com/{{patient.slug}}/timeline/12-909edfdsd-3</a>
+		</li>
+	</ul>
+	
+	<br>
+	<div class="container-sm">
+		<p class="rounded border p-4 w-75 ml-5">
+			{{ patient.surgery_details }}
+		</p>
+	</div>
+
+{% endblock %} 

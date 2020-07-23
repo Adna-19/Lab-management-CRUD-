@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{% static 'patients/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'patients/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'patients/css/font-awesome.css' %}">
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+		{% include "nav-bar.html" %}
+	{% endif %}
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<div style="height: 200px;">
+
+	</div>
+
+<footer class="page-footer font-small bg-info pt-4">
+	<div class="container-fluid text-center text-md-left">
+	  <div class="row">
+		<div class="col-md-6 mt-md-0 mt-3">
+		  <h5 class="text-uppercase text-white">Caliber's Lab</h5>
+		  <p class="text-white mt-4 w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita alias quis porro. Molestias laborum qui aut ex rem cum soluta?</p>  
+		</div>
+  
+		<hr class="clearfix w-100 d-md-none pb-3">
+		<div class="col-md-3 mb-md-0 mb-3">
+		  <h5 class="text-uppercase text-white">Support & Resources</h5>
+		  <ul class="list-unstyled mt-4">
+			<li>
+			  <a href="#!" class="text-white">Knowledge Base</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">Forums</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">Contact Us</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">Theme Showcase</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">Security Library</a>
+			</li>
+		  </ul>  
+		</div>
+		<div class="col-md-3 mb-md-0 mb-3">
+		  <h5 class="text-uppercase text-white">Product</h5>
+		  <ul class="list-unstyled mt-4">
+			<li>
+			  <a href="#!" class="text-white">Tour</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">Pricing</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">News</a>
+			</li>
+			<li>
+			  <a href="#!" class="text-white">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="#" class="text-white">Terms of Service</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+	<div class="footer-copyright text-center py-3 text-white mt-3">© 2020 Copyright:
+	  <a href="https://mdbootstrap.com/" class="text-white"> MDBootstrap.com</a>
+	</div> 
+  </footer>
+</body>
+</html>
